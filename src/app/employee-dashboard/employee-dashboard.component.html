@@ -1,0 +1,72 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue">Angular Crud</h1>
+        <div class="d-flex">
+          <app-button color="green" text="Add" data-bs-toggle="modal" data-bs-target="#exampleModal" (btnClick)="clickToAddEmployee()"></app-button> 
+          <app-button color="blue" text="View All Contacts" routerLink="view"></app-button>
+             
+        </div>
+    </div>
+</nav>
+<!-- TABLE FOR LIST -->
+<table class="table mt-3">
+    <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Number</th>
+        <th scope="col">Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of employeeData">
+            <td>{{ list.id }}</td>
+            <td>{{ list.name }}</td>
+            <td>{{ list.email }}</td>
+            <td>{{ list.number}}</td>
+            <td>
+                <app-button color="blue" text="Edit" data-bs-toggle="modal" data-bs-target="#exampleModal" (btnClick)="onEdit(list)"></app-button>
+                <app-button color="red" text="Delete" (btnClick)="deleteEmployee(list)"></app-button>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
+  <!-- Modal ADDING AND EDITING -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] ="formValue">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" aria-describedby="nameHelp" formControlName="name" placeholder="Enter Full Name">
+                    <div id="nameHelp" class="form-text">Make Sure to type In your full name</div>
+                    <span *ngIf="name && name.invalid && name.touched">Name is Invalid. It Should be more than 5 characters long</span>
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  formControlName="email" placeholder="Enter Email Address">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <span *ngIf="email && email.invalid && email.touched">Email is NOT VALID</span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contact Number</label>
+                    <input type="text" class="form-control" aria-describedby="numberHelp"  formControlName="number" placeholder="Enter Number">
+                    <div id="numberHelp" class="form-text">Make Sure to type-in your active number.</div>
+                    <span *ngIf="number && number.invalid && number.touched">Number is invalid. It should contain a 11 DIGIT NUMBER!</span>
+                  </div>
+                
+              </form>
+        </div>
+        <div class="modal-footer">
+          <app-button color="red" text="Close" id="cancel" data-bs-dismiss="modal"></app-button>
+          <button type="button" class="btn btn-primary" *ngIf="showAdd" (click)="postEmployeeDetails()" [disabled]="formValue.invalid">Add</button>
+          <app-button color="blue" text="Save Changes" *ngIf="showUpdate" (btnClick)="updateEmployeeDetails()"></app-button>
+        </div>
+      </div>
+    </div>
+  </div>

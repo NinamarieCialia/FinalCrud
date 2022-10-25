@@ -1,0 +1,17 @@
+<table class="table mt-3">
+    <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Number</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of employeeData">
+            <td>{{ list.id }}</td>
+            <td>{{ list.name }}</td>
+            <td>{{ list.email }}</td>
+            <td>{{ list.number}}</td>
+        </tr>
+    </tbody>
+    <button class="btn btn-outline-primary" routerLink="/">Back</button>
+</table>

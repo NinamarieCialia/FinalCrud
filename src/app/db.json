@@ -1,0 +1,46 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Niñamarie Cialia D. Mamongay",
+      "email": "ninamarie.c.mamongay@accenture.com",
+      "number": "09665576792"
+    },
+    {
+      "id": 2,
+      "name": "Rom Gerico A. Aranas",
+      "email": "gerome@gmail.com",
+      "number": "09234531572"
+    },
+    {
+      "id": 3,
+      "name": "Charliemae D. Mamomgay",
+      "email": "Charlie@gmail.com",
+      "number": "09234531572"
+    },
+    {
+      "id": 4,
+      "name": "Niñamarie Cialia D. Mamongay",
+      "email": "ninamarie.c.mamongay@accenture.com",
+      "number": "+639665576792"
+    },
+    {
+      "id": 5,
+      "name": "Charliemae D. Mamomgay",
+      "email": "Charlie@gmail.com",
+      "number": "09234531572"
+    },
+    {
+      "id": 6,
+      "name": "Rom Gerico A. Aranas",
+      "email": "gerome@gmail.com",
+      "number": "09234531572"
+    },
+    {
+      "id": 7,
+      "name": "Niñamarie Cialia D. Mamongay",
+      "email": "ninamarie.c.mamongay@accenture.com",
+      "number": "+639665576792"
+    }
+  ]
+}
